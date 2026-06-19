@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulb On Off</title>
+    <title>Bulb ON OFF</title>
+
     <style>
         body {
             text-align: center;
-            margin-top: 50px;
             font-family: Arial, sans-serif;
-            background-color: rgb(213, 233, 240);
+            margin-top: 50px;
         }
 
         #bulb {
@@ -18,50 +17,61 @@
         }
 
         button {
-            width: 100px;
-            height: 40px;
+            width: 120px;
+            height: 50px;
             font-size: 18px;
-            margin: 10px;
-            cursor: pointer;
+            font-weight: bold;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 10px;
         }
 
-        .on-btn {
-            background-color: green;
-            color: white;
-        }
-
-        .off-btn {
-            background-color: red;
+        .active {
             color: white;
         }
     </style>
 </head>
-
 <body>
-    <img src="off-2.png" alt="Bulb Off" id="bulb">
+
+    <h1>Bulb ON OFF</h1>
+
+    <img src="off-3.png" id="bulb" alt="Bulb">
+
     <br><br>
 
-    <button type="button" class="on-btn" onclick="bulbOn()">
-        ON
-    </button>
-
-    <button type="button" class="off-btn" onclick="bulbOff()">
-        OFF
-    </button>
+    <button id="onBtn" onclick="bulbOn()">ON</button>
+    <button id="offBtn" onclick="bulbOff()">OFF</button>
 
     <script>
-        const bulbElement = document.getElementById("bulb");
+        const bulb = document.getElementById("bulb");
+        const onBtn = document.getElementById("onBtn");
+        const offBtn = document.getElementById("offBtn");
 
         function bulbOn() {
-            bulbElement.src = "on-2.png";
+            console.log("funvtion called");
+            
+            bulb.src = "on-3.png";
+
+            onBtn.style.backgroundColor = "green";
+            onBtn.style.color = "white";
+
+            offBtn.style.backgroundColor = "lightgray";
+            offBtn.style.color = "black";
         }
 
         function bulbOff() {
-            bulbElement.src = "off-2.png";
-        }
-    </script>
-</body>
+            bulb.src = "off-3.png";
 
-</html>
+            offBtn.style.backgroundColor = "red";
+            offBtn.style.color = "white";
+
+            onBtn.style.backgroundColor = "lightgray";
+            onBtn.style.color = "black";
+        }
+
+        bulbOff();
+    </script>
+
+</body>
+</html> 
